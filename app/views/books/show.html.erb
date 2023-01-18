@@ -1,9 +1,12 @@
-<%= render 'users/info', user: @user %>
+<div>
+  <%= flash[:notice] %>
+</div>
+<%= render 'users/info', user: @user, book: @bookk %>
 
 <h1>Book detail</h1>
 <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
-<p><%= @book.user.name %></p>
-<p><%= @book.title %></p>
+<p><%= link_to @book.user.name, user_path(@user.id) %></p>
+<p><%= link_to @book.title, book_path(@book.id) %></p>
 <p><%= @book.body %></p>
 <% if @book.user == current_user %>
   <%= link_to "Edit", edit_book_path(@book.id) %>

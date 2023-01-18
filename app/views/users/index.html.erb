@@ -1,4 +1,17 @@
-<%= render 'info', user: @user %>
+<%= render 'info', user: @user, book: @book %>
 <h1>Users</h1>
-<p>mage</p>
-<p>name</p>
+<thead>
+  <tr>
+    <th>image</th>
+    <th>name</th>
+    <th></th>
+  </tr>
+</thead>
+
+<% @users.each do |user| %>
+<div>
+  <p><%= image_tag user.get_profile_image(100,100) %></p>
+  <p><%= user.name %></p>
+  <p><%= link_to "Show", user_path(user.id) %></p>
+</div>
+<% end %>

@@ -1,4 +1,14 @@
 <h1>User info</h1>
+
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>error
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<%end %>
+
 <%= form_with model: @user do |f| %>
   <label for="inputName">Name</label>
   <%= f.text_field :name, autofocus: true, id:"inputName" %>
@@ -7,6 +17,6 @@
   <!--Introduction-->
   <label for="inputIntro">Introduction</label>
   <%= f.text_area :introduction, autofocus: true, id:"inputIntro"%>
-  
+
   <%= f.submit "Update User" %>
 <% end %>
