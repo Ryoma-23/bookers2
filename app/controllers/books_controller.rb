@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :is_matching_login_user, only: [:edit, :update]
   def index
     @book = Book.new
     @books = Book.all
@@ -50,4 +51,10 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body)
   end
 
+  def is_matching_login_user
+    book = Book.find(params[:id])
+    unless current_user == book.user
+      redirect_to books_path
+    end
+  end
 end

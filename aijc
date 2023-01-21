@@ -1,0 +1,47 @@
+[33mcommit f3c5b6b39665ddd135968a2e1e05d63ef1d9e3b5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Ryoma-23 <120545081+Ryoma-23@users.noreply.github.com>
+Date:   Thu Jan 19 13:12:51 2023 +0000
+
+    [Need]fix
+
+[33mcommit dbc467746dc0d221fbb44f52fdb3841742d09e47[m
+Author: Ryoma-23 <120545081+Ryoma-23@users.noreply.github.com>
+Date:   Thu Jan 19 08:39:21 2023 +0000
+
+    [Add] アイコン追加
+
+[33mcommit b559ff69d6d3e0a4e44369755d370aa344147b66[m
+Author: Ryoma-23 <120545081+Ryoma-23@users.noreply.github.com>
+Date:   Thu Jan 19 07:27:57 2023 +0000
+
+    [Finish]
+
+[33mcommit 78d828bbdabf48b2a1bd431a04faaf56429c5b6a[m
+Author: Ryoma-23 <120545081+Ryoma-23@users.noreply.github.com>
+Date:   Wed Jan 18 11:33:30 2023 +0000
+
+    [Add] nameでログイン、ページ完成、残りレイアウト
+
+[33mcommit 1a15082dd9676cf92e477b06517edb97443ab892[m
+Author: Ryoma-23 <120545081+Ryoma-23@users.noreply.github.com>
+Date:   Wed Jan 18 08:21:04 2023 +0000
+
+    [Add] バリデーション、権限、フラッシュメッセージの設定
+
+[33mcommit d4abd82b50f3f9b4f16057b193bfb30b5858e011[m
+Author: Ryoma-23 <120545081+Ryoma-23@users.noreply.github.com>
+Date:   Tue Jan 17 10:27:33 2023 +0000
+
+    [Add] 部分テンプレート
+
+[33mcommit 1efbfbdf6b36fdf7cb4bc8aedf568f9d5e341a30[m
+Author: Ryoma-23 <120545081+Ryoma-23@users.noreply.github.com>
+Date:   Mon Jan 16 12:08:38 2023 +0000
+
+    [Add] 投稿機能、詳細画面、編集画面、一覧画面
+
+[33mcommit fcfc33f5da3f6bd0a545a7ace88d115333a6cc89[m
+Author: Ryoma-23 <120545081+Ryoma-23@users.noreply.github.com>
+Date:   Mon Jan 16 08:31:50 2023 +0000
+
+    [Initial Commit] 投稿機能の作成

@@ -1,4 +1,14 @@
 <div class="container px-5 px-sm-0">
+  <div id="error_explanation">
+    <% if @book.errors.any? %>
+      <%= @book.errors.count %>error
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
   <div class="row">
     <%= render 'info', user: @user, book: @book %>
     <dev class="col-md-8 offset-md-1">
@@ -14,7 +24,7 @@
         <tbody>
           <% @users.each do |user| %>
           <tr>
-            <td><%= image_tag user.get_profile_image(100,100) %></td>
+            <td><%= image_tag user.get_profile_image(80,80) %></td>
             <td><%= user.name %></td>
             <td><%= link_to "Show", user_path(user.id) %></td>
           </tr>

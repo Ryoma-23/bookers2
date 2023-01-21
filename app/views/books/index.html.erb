@@ -3,8 +3,18 @@
 </div>
 
 <div class="container px-5 px-sm-0">
+  <div id="error_explanation">
+    <% if @book.errors.any? %>
+      <%= @book.errors.count %>error
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
   <div class="row">
     <%= render 'users/info', user: @user, book: @book %>
-    <%= render 'post', books: @books %>
+    <%= render 'post', books: @books, user: @user %>
   </div>
 </div>
