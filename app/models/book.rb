@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   has_one_attached :image
   belongs_to :user
   has_many :favorites, dependent: :destroy
+  has_many :book_comments, dependent: :destroy
 
   validates :title, presence: true
   validates :body, presence: true
@@ -9,8 +10,8 @@ class Book < ApplicationRecord
 
   has_one_attached :profile_image
 
-  def favorited_by?(user)
-    favorites.where(user_id: user.id).exists?
+  def favorited?(user)
+    favorites.exists?(user_id: user.id)
   end
 
   def get_profile_image(width, height)
