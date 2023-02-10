@@ -45,20 +45,41 @@
           </tr>
         </tbody>
       </table>
-      <div>
-        <p>コメント件数：<%= @book.book_comments.count %></p>
-        <% @book.book_comments.each do |book_comment| %>
-          <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
-          <%= book_comment.user.name %>
-          <% if book_comment.user == current_user %>
-            <%= link_to "削除", book_book_comment_path(book_comment.book, book_comment), method: :delete %>
-          <% end %>
+
+      <table>
+        <% if @error_comment.present? %>
+          <div id="error_explanation">
+            <h2><%= @error_comment.errors.count %>件のエラーが発生しました。</h2>
+            <ul>
+              <% @error_comment.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </div>
+        <tbody>
+          <% @book.book_comments.each do |book_comment| %>
+          <tr>
+            <td>
+              <%= link_to user_path(book_comment.user) do %>
+                <%= image_tag @book.user.get_profile_image(100,100) %><br>
+                <%= book_comment.user.name %>
+              <% end %>
+            </td>
+            <td><%= book_comment.comment %></td>
+            <td>
+              <% if book_comment.user == current_user %>
+                <%= link_to "削除", book_book_comment_path(book_comment.book, book_comment), method: :delete %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
       <div>
         <%= form_with model: [@book, @book_comment] do |f| %>
-          <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-          <%= f.submit "送信する" %>
+          <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに", class: "w-100" %>
+          <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
         <% end %>
       </div>
     </div>
